@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
-@EntityScan
+@EntityScan(basePackages = "com.example.domain")
 @EnableJpaRepositories(basePackages = "com.example.dao")
 public class DemoSpringBootApplication extends SpringBootServletInitializer{
 
