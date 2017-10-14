@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
-@EntityScan
+@EntityScan(basePackages = "com.example")
 @EnableJpaRepositories(basePackages = "com.example.dao")
 public class DemoSpringBootApplication extends SpringBootServletInitializer{
 
@@ -36,6 +36,7 @@ public class DemoSpringBootApplication extends SpringBootServletInitializer{
 		players.add(new Player("Snoopy", "1B"));
 
 		Team team = new Team("California", "peanuts", players);
+        teamDao.save(team);
 	}
 	@Autowired
 	TeamDao teamDao;
